@@ -52,7 +52,7 @@ PST.NOMBRE_PROYECTO
 ,'iter-data-storage-pv-uat'),'interseguro-data','iter-data-storage-pv-uat'),'iter-data-storage-pv-uat-uat','iter-data-storage-pv-uat') AS DDL
 --,PST.hash_diff
 --,PST.FECHA_CREACION_REGISTRO
-FROM (SELECT * FROM  `iter-data-storage-pv.master_product.PLNT_STORE_PROCEDURE_HIST`
+FROM (SELECT * FROM  `iter-data-storage-pv.logging_bigquery.CLOUD_BIGQUERY_STORE_PROCEDURE_raw`
       QUALIFY(ROW_NUMBER()OVER(PARTITION BY NOMBRE_PROYECTO,NOMBRE_STORE_PROCEDURE ORDER BY FECHA_CREACION DESC)) =1) PST
 INNER JOIN TMP_DATA TD
         ON PST.NOMBRE_STORE_PROCEDURE = TD.NOMBRE_STORE_PROCEDURE
