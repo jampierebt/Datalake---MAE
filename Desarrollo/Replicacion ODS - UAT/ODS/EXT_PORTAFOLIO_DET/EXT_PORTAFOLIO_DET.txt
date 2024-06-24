@@ -1,0 +1,1 @@
+gs://interseguro-datalake-prd-landing/PRD/ODS/EXT_PORTAFOLIO_DET/EXT_PORTAFOLIO_DET-000000000000.csv.gz

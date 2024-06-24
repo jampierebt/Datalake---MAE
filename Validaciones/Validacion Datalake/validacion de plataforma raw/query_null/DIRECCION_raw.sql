@@ -1,0 +1,31 @@
+SELECT SUM(CASE WHEN TRIM(UPPER(PROD.iddireccionorigenvalue)) IS NULL AND TRIM(UPPER(UAT.iddireccionorigenvalue))="" THEN 1 ELSE 0 END) AS DIFF_iddireccionorigenvalue
+,SUM(CASE WHEN TRIM(UPPER(PROD.iddireccionorigeninput)) IS NULL AND TRIM(UPPER(UAT.iddireccionorigeninput))="" THEN 1 ELSE 0 END) AS DIFF_iddireccionorigeninput
+,SUM(CASE WHEN TRIM(UPPER(PROD.systemidvalue)) IS NULL AND TRIM(UPPER(UAT.systemidvalue))="" THEN 1 ELSE 0 END) AS DIFF_systemidvalue
+,SUM(CASE WHEN TRIM(UPPER(PROD.systemidinput)) IS NULL AND TRIM(UPPER(UAT.systemidinput))="" THEN 1 ELSE 0 END) AS DIFF_systemidinput
+,SUM(CASE WHEN TRIM(UPPER(PROD.userloginvalue)) IS NULL AND TRIM(UPPER(UAT.userloginvalue))="" THEN 1 ELSE 0 END) AS DIFF_userloginvalue
+,SUM(CASE WHEN TRIM(UPPER(PROD.userlogininput)) IS NULL AND TRIM(UPPER(UAT.userlogininput))="" THEN 1 ELSE 0 END) AS DIFF_userlogininput
+,SUM(CASE WHEN TRIM(UPPER(PROD.emailvalue)) IS NULL AND TRIM(UPPER(UAT.emailvalue))="" THEN 1 ELSE 0 END) AS DIFF_emailvalue
+,SUM(CASE WHEN TRIM(UPPER(PROD.emailinput)) IS NULL AND TRIM(UPPER(UAT.emailinput))="" THEN 1 ELSE 0 END) AS DIFF_emailinput
+,SUM(CASE WHEN TRIM(UPPER(PROD.tipodirecciontercerovalue)) IS NULL AND TRIM(UPPER(UAT.tipodirecciontercerovalue))="" THEN 1 ELSE 0 END) AS DIFF_tipodirecciontercerovalue
+,SUM(CASE WHEN TRIM(UPPER(PROD.tipodireccionterceroinput)) IS NULL AND TRIM(UPPER(UAT.tipodireccionterceroinput))="" THEN 1 ELSE 0 END) AS DIFF_tipodireccionterceroinput
+,SUM(CASE WHEN TRIM(UPPER(PROD.codpaisvalue)) IS NULL AND TRIM(UPPER(UAT.codpaisvalue))="" THEN 1 ELSE 0 END) AS DIFF_codpaisvalue
+,SUM(CASE WHEN TRIM(UPPER(PROD.codpaisinput)) IS NULL AND TRIM(UPPER(UAT.codpaisinput))="" THEN 1 ELSE 0 END) AS DIFF_codpaisinput
+,SUM(CASE WHEN TRIM(UPPER(PROD.referenciadireccionvalue)) IS NULL AND TRIM(UPPER(UAT.referenciadireccionvalue))="" THEN 1 ELSE 0 END) AS DIFF_referenciadireccionvalue
+,SUM(CASE WHEN TRIM(UPPER(PROD.descripciondireccionvalue)) IS NULL AND TRIM(UPPER(UAT.descripciondireccionvalue))="" THEN 1 ELSE 0 END) AS DIFF_descripciondireccionvalue
+,SUM(CASE WHEN TRIM(UPPER(PROD.telefonocelularvalue)) IS NULL AND TRIM(UPPER(UAT.telefonocelularvalue))="" THEN 1 ELSE 0 END) AS DIFF_telefonocelularvalue
+,SUM(CASE WHEN TRIM(UPPER(PROD.telefonocelularinput)) IS NULL AND TRIM(UPPER(UAT.telefonocelularinput))="" THEN 1 ELSE 0 END) AS DIFF_telefonocelularinput
+,SUM(CASE WHEN TRIM(UPPER(PROD.numerofaxvalue)) IS NULL AND TRIM(UPPER(UAT.numerofaxvalue))="" THEN 1 ELSE 0 END) AS DIFF_numerofaxvalue
+,SUM(CASE WHEN TRIM(UPPER(PROD.numerofaxinput)) IS NULL AND TRIM(UPPER(UAT.numerofaxinput))="" THEN 1 ELSE 0 END) AS DIFF_numerofaxinput
+,SUM(CASE WHEN TRIM(UPPER(PROD.coddistritovalue)) IS NULL AND TRIM(UPPER(UAT.coddistritovalue))="" THEN 1 ELSE 0 END) AS DIFF_coddistritovalue
+,SUM(CASE WHEN TRIM(UPPER(PROD.coddistritoinput)) IS NULL AND TRIM(UPPER(UAT.coddistritoinput))="" THEN 1 ELSE 0 END) AS DIFF_coddistritoinput
+,SUM(CASE WHEN TRIM(UPPER(PROD.codprovinciavalue)) IS NULL AND TRIM(UPPER(UAT.codprovinciavalue))="" THEN 1 ELSE 0 END) AS DIFF_codprovinciavalue
+,SUM(CASE WHEN TRIM(UPPER(PROD.codprovinciainput)) IS NULL AND TRIM(UPPER(UAT.codprovinciainput))="" THEN 1 ELSE 0 END) AS DIFF_codprovinciainput
+,SUM(CASE WHEN TRIM(UPPER(PROD.coddepartamentovalue)) IS NULL AND TRIM(UPPER(UAT.coddepartamentovalue))="" THEN 1 ELSE 0 END) AS DIFF_coddepartamentovalue
+,SUM(CASE WHEN TRIM(UPPER(PROD.coddepartamentoinput)) IS NULL AND TRIM(UPPER(UAT.coddepartamentoinput))="" THEN 1 ELSE 0 END) AS DIFF_coddepartamentoinput
+,SUM(CASE WHEN TRIM(UPPER(PROD.telefonovalue)) IS NULL AND TRIM(UPPER(UAT.telefonovalue))="" THEN 1 ELSE 0 END) AS DIFF_telefonovalue
+,SUM(CASE WHEN TRIM(UPPER(PROD.telefonoinput)) IS NULL AND TRIM(UPPER(UAT.telefonoinput))="" THEN 1 ELSE 0 END) AS DIFF_telefonoinput
+,SUM(CASE WHEN TRIM(UPPER(PROD.descripciondireccioninput)) IS NULL AND TRIM(UPPER(UAT.descripciondireccioninput))="" THEN 1 ELSE 0 END) AS DIFF_descripciondireccioninput
+,SUM(CASE WHEN TRIM(UPPER(PROD.referenciadireccioninput)) IS NULL AND TRIM(UPPER(UAT.referenciadireccioninput))="" THEN 1 ELSE 0 END) AS DIFF_referenciadireccioninput
+FROM iter-data-storage-pv-uat.acsele_data.DIRECCION_raw UAT 
+INNER JOIN interseguro-data.acsele_data.DIRECCION_raw PROD 
+ON UAT.PK = PROD.PK

@@ -1,0 +1,2 @@
+SELECT SUM(CASE WHEN TRIM(UPPER(PROD.firstpaymentmodetemplate)) IS NULL AND TRIM(UPPER(UAT.firstpaymentmodetemplate))="" THEN 1 ELSE 0 END) AS DIFF_firstpaymentmodetemplate
+,SUM(CASE WHEN TRIM(UPPER(PROD.paymentmodetemplatename)) IS NULL AND TRIM(UPPER(UAT.paymentmodetemplatename))="" THEN 1 ELSE 0 END) AS DIFF_paymentmodetemplatename

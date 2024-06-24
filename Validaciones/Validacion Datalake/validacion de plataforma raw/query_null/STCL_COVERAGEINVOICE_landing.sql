@@ -1,0 +1,1 @@
+SELECT SUM(CASE WHEN TRIM(UPPER(PROD.covi_invoice)) IS NULL AND TRIM(UPPER(UAT.covi_invoice))="" THEN 1 ELSE 0 END) AS DIFF_covi_invoice

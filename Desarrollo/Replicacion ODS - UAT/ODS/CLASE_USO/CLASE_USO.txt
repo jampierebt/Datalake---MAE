@@ -1,0 +1,1 @@
+gs://interseguro-datalake-prd-landing/PRD/ODS/CLASE_USO/CLASE_USO-000000000000.csv.gz

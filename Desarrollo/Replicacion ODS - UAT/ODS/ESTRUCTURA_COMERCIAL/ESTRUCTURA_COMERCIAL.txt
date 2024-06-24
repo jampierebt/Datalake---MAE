@@ -1,0 +1,1 @@
+gs://interseguro-datalake-prd-landing/PRD/ODS/ESTRUCTURA_COMERCIAL/ESTRUCTURA_COMERCIAL-000000000000.csv.gz

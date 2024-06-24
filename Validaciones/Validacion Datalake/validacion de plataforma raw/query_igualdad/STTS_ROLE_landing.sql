@@ -1,0 +1,2 @@
+SELECT SUM(CASE WHEN PROD.rol_id!=UAT.rol_id THEN 1 ELSE 0 END) AS DIFF_rol_id
+,SUM(CASE WHEN TRIM(UPPER(PROD.rol_description))!=TRIM(UPPER(UAT.rol_description)) THEN 1 ELSE 0 END) AS DIFF_rol_description

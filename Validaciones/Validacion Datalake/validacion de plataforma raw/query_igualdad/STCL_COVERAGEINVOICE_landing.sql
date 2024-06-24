@@ -1,0 +1,10 @@
+SELECT SUM(CASE WHEN TRIM(UPPER(PROD.covi_invoice))!=TRIM(UPPER(UAT.covi_invoice)) THEN 1 ELSE 0 END) AS DIFF_covi_invoice
+,SUM(CASE WHEN PROD.covi_date!=UAT.covi_date THEN 1 ELSE 0 END) AS DIFF_covi_date
+,SUM(CASE WHEN PROD.tpt_id!=UAT.tpt_id THEN 1 ELSE 0 END) AS DIFF_tpt_id
+,SUM(CASE WHEN PROD.dco_id!=UAT.dco_id THEN 1 ELSE 0 END) AS DIFF_dco_id
+,SUM(CASE WHEN PROD.crbf_id!=UAT.crbf_id THEN 1 ELSE 0 END) AS DIFF_crbf_id
+,SUM(CASE WHEN PROD.cot_id!=UAT.cot_id THEN 1 ELSE 0 END) AS DIFF_cot_id
+,SUM(CASE WHEN PROD.pod_id!=UAT.pod_id THEN 1 ELSE 0 END) AS DIFF_pod_id
+,SUM(CASE WHEN PROD.dco_idtaxes!=UAT.dco_idtaxes THEN 1 ELSE 0 END) AS DIFF_dco_idtaxes
+,SUM(CASE WHEN PROD.cot_idtaxes!=UAT.cot_idtaxes THEN 1 ELSE 0 END) AS DIFF_cot_idtaxes
+,SUM(CASE WHEN PROD.covi_rate!=UAT.covi_rate THEN 1 ELSE 0 END) AS DIFF_covi_rate

@@ -1,0 +1,1 @@
+gs://interseguro-datalake-prd-landing/PRD/ODS/EXT_FLEX_RPT_FLEXRESUMEN/EXT_FLEX_RPT_FLEXRESUMEN-000000000000.csv.gz

@@ -1,0 +1,12 @@
+2022-10-07 14:45:01 [INFO] Start of process
+2022-10-07 14:45:01 [INFO] Main path - /home/interseguro-data/dev/sh/ODS/COLABORADOR
+2022-10-07 14:45:01 [INFO] Exporting table
+2022-10-07 14:45:04 [INFO] Listing the files
+2022-10-07 14:45:05 [INFO] Loading the file gs://interseguro-datalake-prd-landing/PRD/ODS/COLABORADOR/COLABORADOR-000000000000.csv.gz
+2022-10-07 14:45:06 [INFO] Deleting file gs://interseguro-datalake-prd-landing/PRD/ODS/COLABORADOR/COLABORADOR-000000000000.csv.gz
+2022-10-07 14:45:08 [INFO] Executing the procedure in Postgresql 
+2022-10-07 14:45:08 [INFO] Inicio de proceso
+CALL
+2022-10-07 14:45:09 [ OK  ] EJECUCION CORRECTA ...! > 0-postgresql-Ingesta a la tabla Final
+2022-10-07 14:45:09 [INFO]> Fin de ejecucion...!!!
+2022-10-07 14:45:09 [INFO] Finished successfully

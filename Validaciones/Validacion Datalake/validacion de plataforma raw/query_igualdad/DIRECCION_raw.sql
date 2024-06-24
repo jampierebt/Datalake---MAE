@@ -1,0 +1,34 @@
+SELECT SUM(CASE WHEN TRIM(UPPER(PROD.iddireccionorigenvalue))!=TRIM(UPPER(UAT.iddireccionorigenvalue)) THEN 1 ELSE 0 END) AS DIFF_iddireccionorigenvalue
+,SUM(CASE WHEN TRIM(UPPER(PROD.iddireccionorigeninput))!=TRIM(UPPER(UAT.iddireccionorigeninput)) THEN 1 ELSE 0 END) AS DIFF_iddireccionorigeninput
+,SUM(CASE WHEN TRIM(UPPER(PROD.systemidvalue))!=TRIM(UPPER(UAT.systemidvalue)) THEN 1 ELSE 0 END) AS DIFF_systemidvalue
+,SUM(CASE WHEN TRIM(UPPER(PROD.systemidinput))!=TRIM(UPPER(UAT.systemidinput)) THEN 1 ELSE 0 END) AS DIFF_systemidinput
+,SUM(CASE WHEN TRIM(UPPER(PROD.userloginvalue))!=TRIM(UPPER(UAT.userloginvalue)) THEN 1 ELSE 0 END) AS DIFF_userloginvalue
+,SUM(CASE WHEN TRIM(UPPER(PROD.userlogininput))!=TRIM(UPPER(UAT.userlogininput)) THEN 1 ELSE 0 END) AS DIFF_userlogininput
+,SUM(CASE WHEN TRIM(UPPER(PROD.emailvalue))!=TRIM(UPPER(UAT.emailvalue)) THEN 1 ELSE 0 END) AS DIFF_emailvalue
+,SUM(CASE WHEN TRIM(UPPER(PROD.emailinput))!=TRIM(UPPER(UAT.emailinput)) THEN 1 ELSE 0 END) AS DIFF_emailinput
+,SUM(CASE WHEN TRIM(UPPER(PROD.tipodirecciontercerovalue))!=TRIM(UPPER(UAT.tipodirecciontercerovalue)) THEN 1 ELSE 0 END) AS DIFF_tipodirecciontercerovalue
+,SUM(CASE WHEN TRIM(UPPER(PROD.tipodireccionterceroinput))!=TRIM(UPPER(UAT.tipodireccionterceroinput)) THEN 1 ELSE 0 END) AS DIFF_tipodireccionterceroinput
+,SUM(CASE WHEN TRIM(UPPER(PROD.codpaisvalue))!=TRIM(UPPER(UAT.codpaisvalue)) THEN 1 ELSE 0 END) AS DIFF_codpaisvalue
+,SUM(CASE WHEN TRIM(UPPER(PROD.codpaisinput))!=TRIM(UPPER(UAT.codpaisinput)) THEN 1 ELSE 0 END) AS DIFF_codpaisinput
+,SUM(CASE WHEN TRIM(UPPER(PROD.referenciadireccionvalue))!=TRIM(UPPER(UAT.referenciadireccionvalue)) THEN 1 ELSE 0 END) AS DIFF_referenciadireccionvalue
+,SUM(CASE WHEN TRIM(UPPER(PROD.descripciondireccionvalue))!=TRIM(UPPER(UAT.descripciondireccionvalue)) THEN 1 ELSE 0 END) AS DIFF_descripciondireccionvalue
+,SUM(CASE WHEN TRIM(UPPER(PROD.telefonocelularvalue))!=TRIM(UPPER(UAT.telefonocelularvalue)) THEN 1 ELSE 0 END) AS DIFF_telefonocelularvalue
+,SUM(CASE WHEN TRIM(UPPER(PROD.telefonocelularinput))!=TRIM(UPPER(UAT.telefonocelularinput)) THEN 1 ELSE 0 END) AS DIFF_telefonocelularinput
+,SUM(CASE WHEN TRIM(UPPER(PROD.numerofaxvalue))!=TRIM(UPPER(UAT.numerofaxvalue)) THEN 1 ELSE 0 END) AS DIFF_numerofaxvalue
+,SUM(CASE WHEN TRIM(UPPER(PROD.numerofaxinput))!=TRIM(UPPER(UAT.numerofaxinput)) THEN 1 ELSE 0 END) AS DIFF_numerofaxinput
+,SUM(CASE WHEN TRIM(UPPER(PROD.coddistritovalue))!=TRIM(UPPER(UAT.coddistritovalue)) THEN 1 ELSE 0 END) AS DIFF_coddistritovalue
+,SUM(CASE WHEN TRIM(UPPER(PROD.coddistritoinput))!=TRIM(UPPER(UAT.coddistritoinput)) THEN 1 ELSE 0 END) AS DIFF_coddistritoinput
+,SUM(CASE WHEN TRIM(UPPER(PROD.codprovinciavalue))!=TRIM(UPPER(UAT.codprovinciavalue)) THEN 1 ELSE 0 END) AS DIFF_codprovinciavalue
+,SUM(CASE WHEN TRIM(UPPER(PROD.codprovinciainput))!=TRIM(UPPER(UAT.codprovinciainput)) THEN 1 ELSE 0 END) AS DIFF_codprovinciainput
+,SUM(CASE WHEN TRIM(UPPER(PROD.coddepartamentovalue))!=TRIM(UPPER(UAT.coddepartamentovalue)) THEN 1 ELSE 0 END) AS DIFF_coddepartamentovalue
+,SUM(CASE WHEN TRIM(UPPER(PROD.coddepartamentoinput))!=TRIM(UPPER(UAT.coddepartamentoinput)) THEN 1 ELSE 0 END) AS DIFF_coddepartamentoinput
+,SUM(CASE WHEN TRIM(UPPER(PROD.telefonovalue))!=TRIM(UPPER(UAT.telefonovalue)) THEN 1 ELSE 0 END) AS DIFF_telefonovalue
+,SUM(CASE WHEN TRIM(UPPER(PROD.telefonoinput))!=TRIM(UPPER(UAT.telefonoinput)) THEN 1 ELSE 0 END) AS DIFF_telefonoinput
+,SUM(CASE WHEN PROD.status!=UAT.status THEN 1 ELSE 0 END) AS DIFF_status
+,SUM(CASE WHEN PROD.static!=UAT.static THEN 1 ELSE 0 END) AS DIFF_static
+,SUM(CASE WHEN PROD.pk!=UAT.pk THEN 1 ELSE 0 END) AS DIFF_pk
+,SUM(CASE WHEN TRIM(UPPER(PROD.descripciondireccioninput))!=TRIM(UPPER(UAT.descripciondireccioninput)) THEN 1 ELSE 0 END) AS DIFF_descripciondireccioninput
+,SUM(CASE WHEN TRIM(UPPER(PROD.referenciadireccioninput))!=TRIM(UPPER(UAT.referenciadireccioninput)) THEN 1 ELSE 0 END) AS DIFF_referenciadireccioninput
+FROM iter-data-storage-pv-uat.acsele_data.DIRECCION_raw UAT 
+INNER JOIN interseguro-data.acsele_data.DIRECCION_raw PROD 
+ON UAT.PK = PROD.PK

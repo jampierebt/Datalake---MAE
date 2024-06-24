@@ -1,0 +1,1 @@
+gs://interseguro-datalake-prd-landing/PRD/ODS/EXT_RENTABILIDAD_DET/EXT_RENTABILIDAD_DET-000000000000.csv.gz

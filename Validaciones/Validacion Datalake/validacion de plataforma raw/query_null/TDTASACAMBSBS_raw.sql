@@ -1,0 +1,18 @@
+SELECT SUM(CASE WHEN TRIM(UPPER(PROD.pk)) IS NULL AND TRIM(UPPER(UAT.pk))="" THEN 1 ELSE 0 END) AS DIFF_pk
+,SUM(CASE WHEN TRIM(UPPER(PROD.static)) IS NULL AND TRIM(UPPER(UAT.static))="" THEN 1 ELSE 0 END) AS DIFF_static
+,SUM(CASE WHEN TRIM(UPPER(PROD.status)) IS NULL AND TRIM(UPPER(UAT.status))="" THEN 1 ELSE 0 END) AS DIFF_status
+,SUM(CASE WHEN TRIM(UPPER(PROD.mescontabinput)) IS NULL AND TRIM(UPPER(UAT.mescontabinput))="" THEN 1 ELSE 0 END) AS DIFF_mescontabinput
+,SUM(CASE WHEN TRIM(UPPER(PROD.mescontabvalue)) IS NULL AND TRIM(UPPER(UAT.mescontabvalue))="" THEN 1 ELSE 0 END) AS DIFF_mescontabvalue
+,SUM(CASE WHEN TRIM(UPPER(PROD.fechainput)) IS NULL AND TRIM(UPPER(UAT.fechainput))="" THEN 1 ELSE 0 END) AS DIFF_fechainput
+,SUM(CASE WHEN TRIM(UPPER(PROD.fechavalue)) IS NULL AND TRIM(UPPER(UAT.fechavalue))="" THEN 1 ELSE 0 END) AS DIFF_fechavalue
+,SUM(CASE WHEN TRIM(UPPER(PROD.dolasolinput)) IS NULL AND TRIM(UPPER(UAT.dolasolinput))="" THEN 1 ELSE 0 END) AS DIFF_dolasolinput
+,SUM(CASE WHEN TRIM(UPPER(PROD.dolasolvalue)) IS NULL AND TRIM(UPPER(UAT.dolasolvalue))="" THEN 1 ELSE 0 END) AS DIFF_dolasolvalue
+,SUM(CASE WHEN TRIM(UPPER(PROD.soladolinput)) IS NULL AND TRIM(UPPER(UAT.soladolinput))="" THEN 1 ELSE 0 END) AS DIFF_soladolinput
+,SUM(CASE WHEN TRIM(UPPER(PROD.soladolvalue)) IS NULL AND TRIM(UPPER(UAT.soladolvalue))="" THEN 1 ELSE 0 END) AS DIFF_soladolvalue
+,SUM(CASE WHEN TRIM(UPPER(PROD.fechacierremesinput)) IS NULL AND TRIM(UPPER(UAT.fechacierremesinput))="" THEN 1 ELSE 0 END) AS DIFF_fechacierremesinput
+,SUM(CASE WHEN TRIM(UPPER(PROD.fechacierremesvalue)) IS NULL AND TRIM(UPPER(UAT.fechacierremesvalue))="" THEN 1 ELSE 0 END) AS DIFF_fechacierremesvalue
+FROM iter-data-storage-pv-uat.acsele_data.TDTASACAMBSBS_raw UAT 
+INNER JOIN interseguro-data.acsele_data.TDTASACAMBSBS_raw PROD 
+ON UAT.NUMERO_OPERACION = PROD.NUMERO_OPERACION 
+AND UAT.NUMERO_POLIZA = PROD.NUMERO_POLIZA 
+AND UAT.PK = PROD.PK

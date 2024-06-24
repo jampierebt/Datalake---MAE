@@ -1,0 +1,10 @@
+SELECT SUM(CASE WHEN TRIM(UPPER(PROD.description)) IS NULL AND TRIM(UPPER(UAT.description))="" THEN 1 ELSE 0 END) AS DIFF_description
+,SUM(CASE WHEN TRIM(UPPER(PROD.deductiblereference)) IS NULL AND TRIM(UPPER(UAT.deductiblereference))="" THEN 1 ELSE 0 END) AS DIFF_deductiblereference
+,SUM(CASE WHEN TRIM(UPPER(PROD.legacytype)) IS NULL AND TRIM(UPPER(UAT.legacytype))="" THEN 1 ELSE 0 END) AS DIFF_legacytype
+,SUM(CASE WHEN TRIM(UPPER(PROD.doneby)) IS NULL AND TRIM(UPPER(UAT.doneby))="" THEN 1 ELSE 0 END) AS DIFF_doneby
+,SUM(CASE WHEN TRIM(UPPER(PROD.cnr_cause)) IS NULL AND TRIM(UPPER(UAT.cnr_cause))="" THEN 1 ELSE 0 END) AS DIFF_cnr_cause
+,SUM(CASE WHEN TRIM(UPPER(PROD.cnr_detail)) IS NULL AND TRIM(UPPER(UAT.cnr_detail))="" THEN 1 ELSE 0 END) AS DIFF_cnr_detail
+,SUM(CASE WHEN TRIM(UPPER(PROD.cnr_pathologies)) IS NULL AND TRIM(UPPER(UAT.cnr_pathologies))="" THEN 1 ELSE 0 END) AS DIFF_cnr_pathologies
+FROM iter-data-storage-pv-uat.acsele_data.CLAIMNORMALRESERVE_raw UAT 
+INNER JOIN interseguro-data.acsele_data.CLAIMNORMALRESERVE_raw PROD 
+ON UAT.CLAIMNORMALRESERVEDID = PROD.CLAIMNORMALRESERVEDID

@@ -1,0 +1,17 @@
+gs://interseguro-datalake-prd-landing/PRD/ODS/BASE/BASE-000000000000.csv.gz
+gs://interseguro-datalake-prd-landing/PRD/ODS/BASE/BASE-000000000001.csv.gz
+gs://interseguro-datalake-prd-landing/PRD/ODS/BASE/BASE-000000000002.csv.gz
+gs://interseguro-datalake-prd-landing/PRD/ODS/BASE/BASE-000000000003.csv.gz
+gs://interseguro-datalake-prd-landing/PRD/ODS/BASE/BASE-000000000004.csv.gz
+gs://interseguro-datalake-prd-landing/PRD/ODS/BASE/BASE-000000000005.csv.gz
+gs://interseguro-datalake-prd-landing/PRD/ODS/BASE/BASE-000000000006.csv.gz
+gs://interseguro-datalake-prd-landing/PRD/ODS/BASE/BASE-000000000007.csv.gz
+gs://interseguro-datalake-prd-landing/PRD/ODS/BASE/BASE-000000000008.csv.gz
+gs://interseguro-datalake-prd-landing/PRD/ODS/BASE/BASE-000000000009.csv.gz
+gs://interseguro-datalake-prd-landing/PRD/ODS/BASE/BASE-000000000010.csv.gz
+gs://interseguro-datalake-prd-landing/PRD/ODS/BASE/BASE-000000000011.csv.gz
+gs://interseguro-datalake-prd-landing/PRD/ODS/BASE/BASE-000000000012.csv.gz
+gs://interseguro-datalake-prd-landing/PRD/ODS/BASE/BASE-000000000013.csv.gz
+gs://interseguro-datalake-prd-landing/PRD/ODS/BASE/BASE-000000000014.csv.gz
+gs://interseguro-datalake-prd-landing/PRD/ODS/BASE/BASE-000000000015.csv.gz
+gs://interseguro-datalake-prd-landing/PRD/ODS/BASE/BASE-000000000016.csv.gz

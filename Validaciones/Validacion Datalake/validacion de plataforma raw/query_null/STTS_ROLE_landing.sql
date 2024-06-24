@@ -1,0 +1,1 @@
+SELECT SUM(CASE WHEN TRIM(UPPER(PROD.rol_description)) IS NULL AND TRIM(UPPER(UAT.rol_description))="" THEN 1 ELSE 0 END) AS DIFF_rol_description

@@ -1,0 +1,15 @@
+SELECT SUM(CASE WHEN PROD.firstpaymentmodedcok!=UAT.firstpaymentmodedcok THEN 1 ELSE 0 END) AS DIFF_firstpaymentmodedcok
+,SUM(CASE WHEN TRIM(UPPER(PROD.firstpaymentmodetemplate))!=TRIM(UPPER(UAT.firstpaymentmodetemplate)) THEN 1 ELSE 0 END) AS DIFF_firstpaymentmodetemplate
+,SUM(CASE WHEN PROD.cto_id!=UAT.cto_id THEN 1 ELSE 0 END) AS DIFF_cto_id
+,SUM(CASE WHEN PROD.ctob_id!=UAT.ctob_id THEN 1 ELSE 0 END) AS DIFF_ctob_id
+,SUM(CASE WHEN PROD.cnw_id!=UAT.cnw_id THEN 1 ELSE 0 END) AS DIFF_cnw_id
+,SUM(CASE WHEN PROD.status!=UAT.status THEN 1 ELSE 0 END) AS DIFF_status
+,SUM(CASE WHEN PROD.auditdate!=UAT.auditdate THEN 1 ELSE 0 END) AS DIFF_auditdate
+,SUM(CASE WHEN PROD.time_stamp!=UAT.time_stamp THEN 1 ELSE 0 END) AS DIFF_time_stamp
+,SUM(CASE WHEN PROD.addressbookmailid!=UAT.addressbookmailid THEN 1 ELSE 0 END) AS DIFF_addressbookmailid
+,SUM(CASE WHEN PROD.addressbookid!=UAT.addressbookid THEN 1 ELSE 0 END) AS DIFF_addressbookid
+,SUM(CASE WHEN PROD.paymentmodedcopk!=UAT.paymentmodedcopk THEN 1 ELSE 0 END) AS DIFF_paymentmodedcopk
+,SUM(CASE WHEN TRIM(UPPER(PROD.paymentmodetemplatename))!=TRIM(UPPER(UAT.paymentmodetemplatename)) THEN 1 ELSE 0 END) AS DIFF_paymentmodetemplatename
+,SUM(CASE WHEN PROD.dcoid!=UAT.dcoid THEN 1 ELSE 0 END) AS DIFF_dcoid
+,SUM(CASE WHEN PROD.operationpk!=UAT.operationpk THEN 1 ELSE 0 END) AS DIFF_operationpk
+,SUM(CASE WHEN PROD.agregatedobjectid!=UAT.agregatedobjectid THEN 1 ELSE 0 END) AS DIFF_agregatedobjectid

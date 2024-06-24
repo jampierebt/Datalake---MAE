@@ -1,0 +1,12 @@
+SELECT SUM(CASE WHEN PROD.pk!=UAT.pk THEN 1 ELSE 0 END) AS DIFF_pk
+,SUM(CASE WHEN TRIM(UPPER(PROD.static))!=TRIM(UPPER(UAT.static)) THEN 1 ELSE 0 END) AS DIFF_static
+,SUM(CASE WHEN PROD.status!=UAT.status THEN 1 ELSE 0 END) AS DIFF_status
+,SUM(CASE WHEN TRIM(UPPER(PROD.periodopagoprimainput))!=TRIM(UPPER(UAT.periodopagoprimainput)) THEN 1 ELSE 0 END) AS DIFF_periodopagoprimainput
+,SUM(CASE WHEN TRIM(UPPER(PROD.capitalaseguradoinput))!=TRIM(UPPER(UAT.capitalaseguradoinput)) THEN 1 ELSE 0 END) AS DIFF_capitalaseguradoinput
+,SUM(CASE WHEN TRIM(UPPER(PROD.periodopagobenefinput))!=TRIM(UPPER(UAT.periodopagobenefinput)) THEN 1 ELSE 0 END) AS DIFF_periodopagobenefinput
+,SUM(CASE WHEN TRIM(UPPER(PROD.capitalasegantvfinput))!=TRIM(UPPER(UAT.capitalasegantvfinput)) THEN 1 ELSE 0 END) AS DIFF_capitalasegantvfinput
+,SUM(CASE WHEN TRIM(UPPER(PROD.urprimaanualinput))!=TRIM(UPPER(UAT.urprimaanualinput)) THEN 1 ELSE 0 END) AS DIFF_urprimaanualinput
+,SUM(CASE WHEN TRIM(UPPER(PROD.urprimafpinput))!=TRIM(UPPER(UAT.urprimafpinput)) THEN 1 ELSE 0 END) AS DIFF_urprimafpinput
+,SUM(CASE WHEN TRIM(UPPER(PROD.sumaaseguradasegtramoinput))!=TRIM(UPPER(UAT.sumaaseguradasegtramoinput)) THEN 1 ELSE 0 END) AS DIFF_sumaaseguradasegtramoinput
+,SUM(CASE WHEN TRIM(UPPER(PROD.porcdevprimasfinalinput))!=TRIM(UPPER(UAT.porcdevprimasfinalinput)) THEN 1 ELSE 0 END) AS DIFF_porcdevprimasfinalinput
+,SUM(CASE WHEN PROD.fecha_proceso!=UAT.fecha_proceso THEN 1 ELSE 0 END) AS DIFF_fecha_proceso

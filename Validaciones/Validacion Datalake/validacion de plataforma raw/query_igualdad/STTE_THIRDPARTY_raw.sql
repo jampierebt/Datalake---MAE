@@ -1,0 +1,10 @@
+SELECT SUM(CASE WHEN PROD.tpt_id!=UAT.tpt_id THEN 1 ELSE 0 END) AS DIFF_tpt_id
+,SUM(CASE WHEN PROD.tpt_status!=UAT.tpt_status THEN 1 ELSE 0 END) AS DIFF_tpt_status
+,SUM(CASE WHEN PROD.tpt_issystem!=UAT.tpt_issystem THEN 1 ELSE 0 END) AS DIFF_tpt_issystem
+,SUM(CASE WHEN PROD.cot_id!=UAT.cot_id THEN 1 ELSE 0 END) AS DIFF_cot_id
+,SUM(CASE WHEN PROD.iddco!=UAT.iddco THEN 1 ELSE 0 END) AS DIFF_iddco
+,SUM(CASE WHEN PROD.hpl_id!=UAT.hpl_id THEN 1 ELSE 0 END) AS DIFF_hpl_id
+,SUM(CASE WHEN PROD.FECHA_PROCESO!=UAT.FECHA_PROCESO THEN 1 ELSE 0 END) AS DIFF_FECHA_PROCESO
+FROM iter-data-storage-pv-uat.acsele_data.STTE_THIRDPARTY_raw UAT 
+INNER JOIN interseguro-data.acsele_data.STTE_THIRDPARTY_raw PROD 
+ON UAT.TPT_ID = PROD.TPT_ID

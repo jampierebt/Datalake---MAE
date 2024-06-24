@@ -1,0 +1,32 @@
+SELECT SUM(CASE WHEN TRIM(UPPER(PROD.simbolo)) IS NULL AND TRIM(UPPER(UAT.simbolo))="" THEN 1 ELSE 0 END) AS DIFF_simbolo
+,SUM(CASE WHEN TRIM(UPPER(PROD.etiqueta)) IS NULL AND TRIM(UPPER(UAT.etiqueta))="" THEN 1 ELSE 0 END) AS DIFF_etiqueta
+,SUM(CASE WHEN TRIM(UPPER(PROD.tipo)) IS NULL AND TRIM(UPPER(UAT.tipo))="" THEN 1 ELSE 0 END) AS DIFF_tipo
+,SUM(CASE WHEN TRIM(UPPER(PROD.state)) IS NULL AND TRIM(UPPER(UAT.state))="" THEN 1 ELSE 0 END) AS DIFF_state
+,SUM(CASE WHEN TRIM(UPPER(PROD.filtertransformer)) IS NULL AND TRIM(UPPER(UAT.filtertransformer))="" THEN 1 ELSE 0 END) AS DIFF_filtertransformer
+,SUM(CASE WHEN TRIM(UPPER(PROD.propertyinfo)) IS NULL AND TRIM(UPPER(UAT.propertyinfo))="" THEN 1 ELSE 0 END) AS DIFF_propertyinfo
+,SUM(CASE WHEN TRIM(UPPER(PROD.validatorfunction)) IS NULL AND TRIM(UPPER(UAT.validatorfunction))="" THEN 1 ELSE 0 END) AS DIFF_validatorfunction
+,SUM(CASE WHEN TRIM(UPPER(PROD.formula)) IS NULL AND TRIM(UPPER(UAT.formula))="" THEN 1 ELSE 0 END) AS DIFF_formula
+,SUM(CASE WHEN TRIM(UPPER(PROD.transforfunction)) IS NULL AND TRIM(UPPER(UAT.transforfunction))="" THEN 1 ELSE 0 END) AS DIFF_transforfunction
+,SUM(CASE WHEN TRIM(UPPER(PROD.tabletransformer)) IS NULL AND TRIM(UPPER(UAT.tabletransformer))="" THEN 1 ELSE 0 END) AS DIFF_tabletransformer
+,SUM(CASE WHEN TRIM(UPPER(PROD.typerange)) IS NULL AND TRIM(UPPER(UAT.typerange))="" THEN 1 ELSE 0 END) AS DIFF_typerange
+,SUM(CASE WHEN TRIM(UPPER(PROD.presenterfunction)) IS NULL AND TRIM(UPPER(UAT.presenterfunction))="" THEN 1 ELSE 0 END) AS DIFF_presenterfunction
+,SUM(CASE WHEN TRIM(UPPER(PROD.rule)) IS NULL AND TRIM(UPPER(UAT.rule))="" THEN 1 ELSE 0 END) AS DIFF_rule
+,SUM(CASE WHEN TRIM(UPPER(PROD.concept)) IS NULL AND TRIM(UPPER(UAT.concept))="" THEN 1 ELSE 0 END) AS DIFF_concept
+,SUM(CASE WHEN TRIM(UPPER(PROD.mask)) IS NULL AND TRIM(UPPER(UAT.mask))="" THEN 1 ELSE 0 END) AS DIFF_mask
+,SUM(CASE WHEN TRIM(UPPER(PROD.uniquekey)) IS NULL AND TRIM(UPPER(UAT.uniquekey))="" THEN 1 ELSE 0 END) AS DIFF_uniquekey
+,SUM(CASE WHEN TRIM(UPPER(PROD.multiplantilla)) IS NULL AND TRIM(UPPER(UAT.multiplantilla))="" THEN 1 ELSE 0 END) AS DIFF_multiplantilla
+,SUM(CASE WHEN TRIM(UPPER(PROD.validator)) IS NULL AND TRIM(UPPER(UAT.validator))="" THEN 1 ELSE 0 END) AS DIFF_validator
+,SUM(CASE WHEN TRIM(UPPER(PROD.defaultvalue)) IS NULL AND TRIM(UPPER(UAT.defaultvalue))="" THEN 1 ELSE 0 END) AS DIFF_defaultvalue
+,SUM(CASE WHEN TRIM(UPPER(PROD.colinputtransformer)) IS NULL AND TRIM(UPPER(UAT.colinputtransformer))="" THEN 1 ELSE 0 END) AS DIFF_colinputtransformer
+,SUM(CASE WHEN TRIM(UPPER(PROD.colvaluetransformer)) IS NULL AND TRIM(UPPER(UAT.colvaluetransformer))="" THEN 1 ELSE 0 END) AS DIFF_colvaluetransformer
+,SUM(CASE WHEN TRIM(UPPER(PROD.parent)) IS NULL AND TRIM(UPPER(UAT.parent))="" THEN 1 ELSE 0 END) AS DIFF_parent
+,SUM(CASE WHEN TRIM(UPPER(PROD.multiformula)) IS NULL AND TRIM(UPPER(UAT.multiformula))="" THEN 1 ELSE 0 END) AS DIFF_multiformula
+,SUM(CASE WHEN TRIM(UPPER(PROD.multicolumna)) IS NULL AND TRIM(UPPER(UAT.multicolumna))="" THEN 1 ELSE 0 END) AS DIFF_multicolumna
+,SUM(CASE WHEN TRIM(UPPER(PROD.description)) IS NULL AND TRIM(UPPER(UAT.description))="" THEN 1 ELSE 0 END) AS DIFF_description
+,SUM(CASE WHEN TRIM(UPPER(PROD.nro_dias)) IS NULL AND TRIM(UPPER(UAT.nro_dias))="" THEN 1 ELSE 0 END) AS DIFF_nro_dias
+,SUM(CASE WHEN TRIM(UPPER(PROD.status)) IS NULL AND TRIM(UPPER(UAT.status))="" THEN 1 ELSE 0 END) AS DIFF_status
+,SUM(CASE WHEN TRIM(UPPER(PROD.substatus)) IS NULL AND TRIM(UPPER(UAT.substatus))="" THEN 1 ELSE 0 END) AS DIFF_substatus
+,SUM(CASE WHEN TRIM(UPPER(PROD.prt_orderfunction)) IS NULL AND TRIM(UPPER(UAT.prt_orderfunction))="" THEN 1 ELSE 0 END) AS DIFF_prt_orderfunction
+FROM iter-data-storage-pv-uat.acsele_data.PROPERTY_raw UAT 
+INNER JOIN interseguro-data.acsele_data.PROPERTY_raw PROD 
+ON UAT.PROPERTYID = PROD.PROPERTYID

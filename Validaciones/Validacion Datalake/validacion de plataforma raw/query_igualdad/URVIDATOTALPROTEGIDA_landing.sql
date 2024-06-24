@@ -1,0 +1,12 @@
+SELECT SUM(CASE WHEN PROD.auditdate!=UAT.auditdate THEN 1 ELSE 0 END) AS DIFF_auditdate
+,SUM(CASE WHEN PROD.pk!=UAT.pk THEN 1 ELSE 0 END) AS DIFF_pk
+,SUM(CASE WHEN TRIM(UPPER(PROD.static))!=TRIM(UPPER(UAT.static)) THEN 1 ELSE 0 END) AS DIFF_static
+,SUM(CASE WHEN PROD.status!=UAT.status THEN 1 ELSE 0 END) AS DIFF_status
+,SUM(CASE WHEN TRIM(UPPER(PROD.productosvidainput))!=TRIM(UPPER(UAT.productosvidainput)) THEN 1 ELSE 0 END) AS DIFF_productosvidainput
+,SUM(CASE WHEN TRIM(UPPER(PROD.productosvidavalue))!=TRIM(UPPER(UAT.productosvidavalue)) THEN 1 ELSE 0 END) AS DIFF_productosvidavalue
+,SUM(CASE WHEN TRIM(UPPER(PROD.periodopagoprimainput))!=TRIM(UPPER(UAT.periodopagoprimainput)) THEN 1 ELSE 0 END) AS DIFF_periodopagoprimainput
+,SUM(CASE WHEN TRIM(UPPER(PROD.periodopagoprimavalue))!=TRIM(UPPER(UAT.periodopagoprimavalue)) THEN 1 ELSE 0 END) AS DIFF_periodopagoprimavalue
+,SUM(CASE WHEN TRIM(UPPER(PROD.capitalasegantaccinput))!=TRIM(UPPER(UAT.capitalasegantaccinput)) THEN 1 ELSE 0 END) AS DIFF_capitalasegantaccinput
+,SUM(CASE WHEN TRIM(UPPER(PROD.capitalasegantaccvalue))!=TRIM(UPPER(UAT.capitalasegantaccvalue)) THEN 1 ELSE 0 END) AS DIFF_capitalasegantaccvalue
+,SUM(CASE WHEN TRIM(UPPER(PROD.capitalaseguradoaccinput))!=TRIM(UPPER(UAT.capitalaseguradoaccinput)) THEN 1 ELSE 0 END) AS DIFF_capitalaseguradoaccinput
+,SUM(CASE WHEN TRIM(UPPER(PROD.capitalaseguradoaccvalue))!=TRIM(UPPER(UAT.capitalaseguradoaccvalue)) THEN 1 ELSE 0 END) AS DIFF_capitalaseguradoaccvalue

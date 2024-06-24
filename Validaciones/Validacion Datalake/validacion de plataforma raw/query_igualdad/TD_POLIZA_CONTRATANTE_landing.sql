@@ -1,0 +1,11 @@
+SELECT SUM(CASE WHEN TRIM(UPPER(PROD.numero_poliza))!=TRIM(UPPER(UAT.numero_poliza)) THEN 1 ELSE 0 END) AS DIFF_numero_poliza
+,SUM(CASE WHEN PROD.numero_operacion!=UAT.numero_operacion THEN 1 ELSE 0 END) AS DIFF_numero_operacion
+,SUM(CASE WHEN TRIM(UPPER(PROD.auditdate_system_date))!=TRIM(UPPER(UAT.auditdate_system_date)) THEN 1 ELSE 0 END) AS DIFF_auditdate_system_date
+,SUM(CASE WHEN TRIM(UPPER(PROD.operation_datetime))!=TRIM(UPPER(UAT.operation_datetime)) THEN 1 ELSE 0 END) AS DIFF_operation_datetime
+,SUM(CASE WHEN TRIM(UPPER(PROD.id_producto))!=TRIM(UPPER(UAT.id_producto)) THEN 1 ELSE 0 END) AS DIFF_id_producto
+,SUM(CASE WHEN TRIM(UPPER(PROD.nombre_producto))!=TRIM(UPPER(UAT.nombre_producto)) THEN 1 ELSE 0 END) AS DIFF_nombre_producto
+,SUM(CASE WHEN TRIM(UPPER(PROD.status_operation))!=TRIM(UPPER(UAT.status_operation)) THEN 1 ELSE 0 END) AS DIFF_status_operation
+,SUM(CASE WHEN PROD.thirdpartyid!=UAT.thirdpartyid THEN 1 ELSE 0 END) AS DIFF_thirdpartyid
+,SUM(CASE WHEN PROD.rol_id!=UAT.rol_id THEN 1 ELSE 0 END) AS DIFF_rol_id
+,SUM(CASE WHEN TRIM(UPPER(PROD.description))!=TRIM(UPPER(UAT.description)) THEN 1 ELSE 0 END) AS DIFF_description
+,SUM(CASE WHEN TRIM(UPPER(PROD.estado_poliza))!=TRIM(UPPER(UAT.estado_poliza)) THEN 1 ELSE 0 END) AS DIFF_estado_poliza

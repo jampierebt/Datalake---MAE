@@ -1,0 +1,1 @@
+gs://interseguro-datalake-prd-landing/PRD/ODS/BASE_CATEGORIA/BASE_CATEGORIA-000000000000.csv.gz

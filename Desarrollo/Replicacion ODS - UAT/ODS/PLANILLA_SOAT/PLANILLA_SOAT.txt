@@ -1,0 +1,1 @@
+gs://interseguro-datalake-prd-landing/PRD/ODS/PLANILLA_SOAT/PLANILLA_SOAT-000000000000.csv.gz
