@@ -3,11 +3,11 @@
 El proyecto implica la replicacion de los jobs de produccion en el ambiente de uat con el fin de ejecutar y replicar procesos como sp's, tablas a nivel de bigquery, adicionalmente se realizara la replicacion de procesos para la carga de la ODS en el ambiente de uat cambiando los parametros de los archivos en el escenario actual no optimizado.
 
 Proyecto prd: 
-- **"interseguro-data"**
-- **"iter-data-storage-pv"**
+- **interseguro-data**
+- **iter-data-storage-pv**
 
 Proyecto uat: 
-- **"iter-data-storage-pv-uat"**
+- **iter-data-storage-pv-uat**
 
 ___
 
