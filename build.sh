@@ -5,6 +5,8 @@
 
 #zip -r "ODS_UAT.zip" "Desarrollo/Replicacion_ods/ODS_UAT"
 
+#find . -name "desktop.ini" -type f -delete
+
 # ------------------------------------
 # python de replicar
 # ------------------------------------
