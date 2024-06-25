@@ -39,7 +39,7 @@ PERIODO                   STRING
 
 )OPTIONS(
     format=CSV,
-    URIS=["gs://interseguro-normativo-ifrs17-actuals/SINIESTROS/PROVEEDOR/*.csv"],
+    URIS=["gs://uat-interseguro-normativo-ifrs17-actuals/SINIESTROS/PROVEEDOR/*.csv"],
     field_delimiter=';',
     skip_leading_rows=1,
     max_bad_records = 1

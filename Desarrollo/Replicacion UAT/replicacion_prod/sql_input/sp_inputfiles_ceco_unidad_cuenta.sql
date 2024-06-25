@@ -33,7 +33,7 @@ DESCRIPCION_CENTRO_COSTO       STRING
 ,ONEROSIDAD                    STRING
 )OPTIONS(
     format=CSV,
-    URIS=["gs://interseguro-normativo-ifrs17-actuals/CECO_UNIDAD_CUENTA/CECO_UNIDAD_CUENTA_*.csv"],
+    URIS=["gs://uat-interseguro-normativo-ifrs17-actuals/CECO_UNIDAD_CUENTA/CECO_UNIDAD_CUENTA_*.csv"],
     field_delimiter=';',
     skip_leading_rows=1,
     max_bad_records = 1

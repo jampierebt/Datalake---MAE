@@ -25,7 +25,7 @@ PERIODO	                   STRING
 ,MONTO_TIPO_CAMBIO	       STRING
 )OPTIONS(
     format=CSV,
-    URIS=["gs://interseguro-normativo-ifrs17-actuals/TIPO_CAMBIO/*.csv"],
+    URIS=["gs://uat-interseguro-normativo-ifrs17-actuals/TIPO_CAMBIO/*.csv"],
     field_delimiter=';',
     skip_leading_rows=1,
     max_bad_records = 1
