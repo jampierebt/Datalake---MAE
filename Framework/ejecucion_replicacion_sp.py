@@ -4,7 +4,7 @@ import os
 import pandas as pd
 project_id = 'iter-data-storage-pv-uat'
 
-path='Desarrollo/Replicacion_UAT/sql_input/'
+path='Desarrollo/Replicacion_sp/sql_input/'
 replicacion_sql = "sql/replicacion.sql"
 lista_sp = "sql/Lista_sps.sql"
 
