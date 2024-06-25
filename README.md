@@ -9,6 +9,7 @@ El proyecto implica la replicacion de los jobs de produccion en el ambiente de u
 
 - [Instalación](#instalación)
 - [Frameworks](#Framework)
+- [Zipeado-ODS](#Zipeado-ODS)
 
 ## Instalación
 
@@ -38,5 +39,15 @@ python Framework/ejecucion_replicacion_sp.py
 
 # Genera los query para validar la plataforma
 python Framework/ejecucion_query_validacion.py
+
+```
+
+## Zipeado-ODS
+
+Genera el zip con los archivos para ODS para luego hacer unzip en la vm
+
+``` bash
+
+zip -r "ODS_UAT.zip" "Desarrollo/Replicacion_ods/ODS_UAT"
 
 ```
