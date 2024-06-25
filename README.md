@@ -34,7 +34,7 @@ cd Datalake-MAE
 ```
 ## Framework
 
-Instrucciones para utilizar los framework
+Instrucciones para utilizar los framework.
 
 ```bash
 # Ejecuta los jobs de validacion
