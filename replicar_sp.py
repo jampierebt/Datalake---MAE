@@ -40,8 +40,7 @@ def execute_job(query):
     return 'Ejectuado Correctamente'
 
 def main():
-    lista = sqlbigquery(lista_sp)
-    read_table_bq(lista)
+    read_table_bq(sqlbigquery(lista_sp))
     query = sqlbigquery(replicacion_sql)
     store_base(read_table_bq(query),path)
     execute_job(query)

@@ -1,20 +1,4 @@
 SELECT * FROM `iter-data-storage-pv.temp.MIGRACION_STORE_PROCEDURE`
 WHERE nombre_store_procedure in (
-'sp_inputfiles_producto_unidad_cuenta'
-,'sp_inputfiles_ceco_unidad_cuenta'
-,'sp_inputfiles_reaseguro_desgravamen'
-,'sp_inputfiles_reaseguro_vida'
-,'sp_inputfiles_tipo_cambio_ifrs17'
-,'sp_inputfiles_siniestro_beneficiario'
-,'sp_inputfiles_siniestro_desgravamen'
-,'sp_inputfiles_siniestro_optativo'
-,'sp_inputfiles_siniestro_proveedor'
-,'sp_inputfiles_siniestro_vida'
-,'sp_inputfiles_distribucion_costos_gastos'
-,'sp_inputfiles_gastos_reales'
-,'sp_bi_sbs_plnt_movimiento_contable_hist'
-,'sp_bi_sbs_poliza_comprobante_hist'
-,'sp_bi_sbs_plnt_pagos_compania_hist'
-,'sp_bi_sbs_plnt_ifrs17_042'
-,'sp_bi_sbs_normativo_ifrs17'
+'SP_DWH_ODS_MENSUAL_IFRS17'
 )

@@ -2,7 +2,7 @@
 # python de replicar
 # ------------------------------------
 
-python ./replicar_sp.py
+#python ./replicar_sp.py
 
 # ------------------------------------
 # Subir a GIT repository
