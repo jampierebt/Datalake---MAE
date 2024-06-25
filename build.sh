@@ -3,7 +3,7 @@
 # generate zip vm files
 # ------------------------------------
 
-zip -r ODS_UAT.zip /Desarrollo/ODS_UAT
+#zip -r "ODS_UAT.zip" "Desarrollo/Replicacion_ods/ODS_UAT"
 
 # ------------------------------------
 # python de replicar
