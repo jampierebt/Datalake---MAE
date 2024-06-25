@@ -1,0 +1,7 @@
+SELECT
+TABLE_NAME
+,COLUMN_NAME
+,AMBIENTE_PROD
+,AMBIENTE_UAT
+from `iter-data-storage-pv.inputfiles.TABLES_ORACLE`
+--where TABLE_NAME LIKE 'CLAIM_raw'

@@ -1,10 +1,11 @@
-SELECT SUM(CASE WHEN TRIM(UPPER(PROD.productid))!=TRIM(UPPER(UAT.productid)) THEN 1 ELSE 0 END) AS DIFF_productid
+SELECT  
+SUM(CASE WHEN PROD.productid!=UAT.productid THEN 1 ELSE 0 END) AS DIFF_productid
 ,SUM(CASE WHEN TRIM(UPPER(PROD.description))!=TRIM(UPPER(UAT.description)) THEN 1 ELSE 0 END) AS DIFF_description
 ,SUM(CASE WHEN PROD.claimid!=UAT.claimid THEN 1 ELSE 0 END) AS DIFF_claimid
 ,SUM(CASE WHEN PROD.claimdate!=UAT.claimdate THEN 1 ELSE 0 END) AS DIFF_claimdate
 ,SUM(CASE WHEN PROD.policyid!=UAT.policyid THEN 1 ELSE 0 END) AS DIFF_policyid
 ,SUM(CASE WHEN PROD.policydate!=UAT.policydate THEN 1 ELSE 0 END) AS DIFF_policydate
-,SUM(CASE WHEN PROD.totalamount!=UAT.totalamount THEN 1 ELSE 0 END) AS DIFF_totalamount
+,SUM(CASE WHEN CAST(PROD.totalamount AS FLOAT64)!=UAT.totalamount THEN 1 ELSE 0 END) AS DIFF_totalamount
 ,SUM(CASE WHEN PROD.state!=UAT.state THEN 1 ELSE 0 END) AS DIFF_state
 ,SUM(CASE WHEN PROD.eventclaimid!=UAT.eventclaimid THEN 1 ELSE 0 END) AS DIFF_eventclaimid
 ,SUM(CASE WHEN TRIM(UPPER(PROD.claimnumber))!=TRIM(UPPER(UAT.claimnumber)) THEN 1 ELSE 0 END) AS DIFF_claimnumber
@@ -17,4 +18,4 @@ SELECT SUM(CASE WHEN TRIM(UPPER(PROD.productid))!=TRIM(UPPER(UAT.productid)) THE
 ,SUM(CASE WHEN PROD.FECHA_PROCESO!=UAT.FECHA_PROCESO THEN 1 ELSE 0 END) AS DIFF_FECHA_PROCESO
 FROM iter-data-storage-pv-uat.acsele_data.CLAIM_raw UAT 
 INNER JOIN interseguro-data.acsele_data.CLAIM_raw PROD 
-ON UAT.CLAIMID = PROD.CLAIMID
+ON UAT.CLAIMID = PROD.CLAIMID 
