@@ -5,8 +5,8 @@ import pandas as pd
 project_id = 'iter-data-storage-pv-uat'
 
 path='Desarrollo/Replicacion UAT/replicacion_prod/sql_input/'
-replicacion_sql = "replicacion.sql"
-lista_sp = "Lista_sps.sql"
+replicacion_sql = "sql/replicacion.sql"
+lista_sp = "sql/Lista_sps.sql"
 
 def sqlbigquery(filename):
     with open(filename,"r") as file:
