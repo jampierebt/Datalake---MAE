@@ -2,6 +2,9 @@
 
 El proyecto implica la replicacion de los jobs de produccion en el ambiente de uat con el fin de ejecutar y replicar procesos como sp's, tablas a nivel de bigquery, adicionalmente se realizara la replicacion de procesos para la carga de la ODS en el ambiente de uat cambiando los parametros de los archivos en el escenario actual no optimizado.
 
+Version python:
+- **Python 3.10.9**
+
 Proyecto prd: 
 - **interseguro-data**
 - **iter-data-storage-pv**
