@@ -25,6 +25,12 @@ ___
 Instrucciones para descargar el proyecto.
 
 ```bash
+# Active
+eval "$(ssh-agent -s)"
+
+# Agregar la key
+ssh-add key_interseguro
+
 # Clona el repositorio
 git clone -b git@github.com:jampierebt/Datalake-MAE.git
 
@@ -32,7 +38,7 @@ git clone -b git@github.com:jampierebt/Datalake-MAE.git
 cd Datalake-MAE
 
 ```
-## Framework
+## Framework    
 
 Instrucciones para utilizar los framework.
 
