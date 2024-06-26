@@ -119,12 +119,12 @@ def main_create_external_table():
     return "Ejecutado Correctamente"
 
 # Ejecuta la exportacion a cloud storage del todo un dataset entero 
-#main_export_storage()
+main_export_storage()
 # Crea los DDL para las tablas externas y los ejecuta en bq
-#main_create_external_table()
+main_create_external_table()
 # genera los insert de las tablas externas a tabla en bq
-#external_to_table(path_insert,dataset_id,dataset_output,dataset_input)
+external_to_table(path_insert,dataset_id,dataset_output,dataset_input)
 # Aqui falta sumar el truncate table pero es riesgoso (evaluar)
 
 # Ejecuta todos los insert 
-#execute_job_insert(path_insert)
+execute_job_insert(path_insert)
