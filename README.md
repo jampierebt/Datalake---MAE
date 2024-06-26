@@ -55,6 +55,9 @@ python Framework/ejecucion_replicacion_sp.py
 # Genera los query para validar la plataforma
 python Framework/ejecucion_query_validacion.py
 
+# Backup para regresar a uat version antigua
+python Framework/ejecucion_export_backups.py
+
 ```
 
 ## Zipeado-ODS
