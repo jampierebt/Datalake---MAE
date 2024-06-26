@@ -12,6 +12,7 @@ path_insert='Desarrollo/Replicacion_insert/'
 dataset_output='acsele_temp'
 dataset_input='acsele_alloy_new'
 path_ddl='Desarrollo/Replicacion_ddl/'
+path_truncate='Desarrollo/Replicacion_truncate/'
 
 sql =f"""
 SELECT 
@@ -99,6 +100,16 @@ def external_to_table(path,dataset_id,dataset_output,dataset_input):
             file.write('INSERT INTO '+project_id+'.'+dataset_input+'.'+table_id+'\n')
             file.write('SELECT * FROM '+project_id+'.'+dataset_output+'.'+table_id)
 
+def generate_truncate(path,dataset_id):
+    client = bigquery.Client(project_id)
+    dataset_ref = client.dataset(dataset_id)
+    tables = client.list_tables(dataset_ref)
+    for table in tables:
+        table_id = table.table_id
+        table_ref = dataset_ref.table(table_id)
+        with open(path+table_id+'.sql','w') as file:
+            file.write('TRUNCATE TABLE '+project_id+'.'+dataset_id+'.'+table_id)
+
 def execute_job_insert(path):
     client = bigquery.Client(project_id)
     list_sql = os.listdir(path)
@@ -125,6 +136,8 @@ main_create_external_table()
 # genera los insert de las tablas externas a tabla en bq
 external_to_table(path_insert,dataset_id,dataset_output,dataset_input)
 # Aqui falta sumar el truncate table pero es riesgoso (evaluar)
-
+generate_truncate(path_truncate,dataset_input)
+# Ejecuta todos los truncate
+execute_job_insert(path_truncate)
 # Ejecuta todos los insert 
 execute_job_insert(path_insert)
