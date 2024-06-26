@@ -110,11 +110,11 @@ def generate_truncate(path,dataset_id):
         with open(path+table_id+'.sql','w') as file:
             file.write('TRUNCATE TABLE '+project_id+'.'+dataset_id+'.'+table_id)
 
-def execute_job_insert(path):
+def execute_job_bq(path,type):
     client = bigquery.Client(project_id)
     list_sql = os.listdir(path)
     for file in list_sql:
-        print(f" Query insert a BQ: {file}")
+        print(f" Query {type} a BQ: {file}")
         query = sqlbigquery(path+file)
         query_job = client.query(query)
         query_job.result()
@@ -138,6 +138,6 @@ external_to_table(path_insert,dataset_id,dataset_output,dataset_input)
 # Aqui falta sumar el truncate table pero es riesgoso (evaluar)
 generate_truncate(path_truncate,dataset_input)
 # Ejecuta todos los truncate
-execute_job_insert(path_truncate)
+execute_job_bq(path_truncate,'truncate')
 # Ejecuta todos los insert 
-execute_job_insert(path_insert)
+execute_job_bq(path_insert,'insert')
