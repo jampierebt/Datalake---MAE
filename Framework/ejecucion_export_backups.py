@@ -6,20 +6,20 @@ import os
 import pandas as pd
 
 project_id = 'iter-data-storage-pv-uat'
-dataset_id = 'acsele_data_bk'
+dataset_id = 'sampmed_data'
 bucket_name='interseguro-datalake-alloy-uat-new'
-path_insert='Desarrollo/Replicacion_insert/'
-dataset_output='acsele_temp'
-dataset_input='acsele_alloy_new'
-path_ddl='Desarrollo/Replicacion_ddl/'
-path_truncate='Desarrollo/Replicacion_truncate/'
+dataset_output='sampmed_temp'
+dataset_input='sampmed_data'
+path_insert=f'Desarrollo/Replicacion_insert/{dataset_id}/'
+path_ddl=f'Desarrollo/Replicacion_ddl/{dataset_id}/'
+path_truncate=f'Desarrollo/Replicacion_truncate/{dataset_id}/'
 
 sql =f"""
 SELECT 
 TABLE_CATALOG
 ,TABLE_SCHEMA
 ,TABLE_NAME
-,REPLACE(REPLACE(REPLACE(DDL,'{dataset_id}','acsele_temp'),');',CONCAT(')OPTIONS (format="PARQUET",URIS=["gs://{bucket_name}/{dataset_id}/',TABLE_NAME,'/*.parquet"]);')),'CREATE TABLE','CREATE OR REPLACE EXTERNAL TABLE') AS DDL
+,REPLACE(REPLACE(REPLACE(DDL,'{dataset_id}','{dataset_output}'),');',CONCAT(')OPTIONS (format="PARQUET",URIS=["gs://{bucket_name}/{dataset_id}/',TABLE_NAME,'/*.parquet"]);')),'CREATE TABLE','CREATE OR REPLACE EXTERNAL TABLE') AS DDL
 FROM {project_id}.{dataset_id}.INFORMATION_SCHEMA.TABLES
 """
 
@@ -120,13 +120,13 @@ def execute_job_bq(path,type):
         query_job.result()
 
 def main_export_storage():
-    clean_storage(dataset_id,project_id)
+    #clean_storage(dataset_id,project_id)
     export_table_storage(dataset_id,project_id)
     return "Ejecutado Correctamente"
 
 def main_create_external_table():
     store_base(path_ddl,read_table_bq(sql))
-    execute_job(sql,project_id)
+    execute_job_bq(path_ddl,'DDL')
     return "Ejecutado Correctamente"
 
 # Ejecuta la exportacion a cloud storage del todo un dataset entero 
@@ -138,6 +138,6 @@ external_to_table(path_insert,dataset_id,dataset_output,dataset_input)
 # Aqui falta sumar el truncate table pero es riesgoso (evaluar)
 generate_truncate(path_truncate,dataset_input)
 # Ejecuta todos los truncate
-execute_job_bq(path_truncate,'truncate')
+#execute_job_bq(path_truncate,'truncate')
 # Ejecuta todos los insert 
-execute_job_bq(path_insert,'insert')
+#execute_job_bq(path_insert,'insert')

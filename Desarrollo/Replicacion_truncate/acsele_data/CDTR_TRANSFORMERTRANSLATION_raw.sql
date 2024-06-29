@@ -1,0 +1,1 @@
+TRUNCATE TABLE iter-data-storage-pv-uat.acsele_data.CDTR_TRANSFORMERTRANSLATION_raw

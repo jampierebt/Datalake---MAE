@@ -1,0 +1,8 @@
+CREATE OR REPLACE EXTERNAL TABLE `iter-data-storage-pv-uat.acsele_temp.CLAIMRISKUNIT_raw`
+(
+  CLAIMRISKUNITID NUMERIC,
+  CLAIMID NUMERIC,
+  AGREGATEDRISKUNITID NUMERIC,
+  OPERATIONPK NUMERIC,
+  FECHA_PROCESO DATETIME
+)OPTIONS (format="PARQUET",URIS=["gs://interseguro-datalake-alloy-uat-new/acsele_data/CLAIMRISKUNIT_raw/*.parquet"]);

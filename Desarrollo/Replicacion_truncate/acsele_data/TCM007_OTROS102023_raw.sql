@@ -1,0 +1,1 @@
+TRUNCATE TABLE iter-data-storage-pv-uat.acsele_data.TCM007_OTROS102023_raw

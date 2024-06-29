@@ -1,0 +1,8 @@
+CREATE OR REPLACE EXTERNAL TABLE `iter-data-storage-pv-uat.acsele_temp.CURRENCYRATE_raw`
+(
+  CURRENCYORIGINID NUMERIC,
+  CURRENCYTARGETID NUMERIC,
+  DATERATE TIMESTAMP,
+  RATE STRING,
+  FECHA_PROCESO DATETIME
+)OPTIONS (format="PARQUET",URIS=["gs://interseguro-datalake-alloy-uat-new/acsele_data/CURRENCYRATE_raw/*.parquet"]);

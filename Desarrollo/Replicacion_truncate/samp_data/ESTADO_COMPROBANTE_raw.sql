@@ -1,0 +1,1 @@
+TRUNCATE TABLE iter-data-storage-pv-uat.samp_data.ESTADO_COMPROBANTE_raw

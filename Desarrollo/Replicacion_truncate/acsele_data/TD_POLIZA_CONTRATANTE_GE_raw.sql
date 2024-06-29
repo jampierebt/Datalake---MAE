@@ -1,0 +1,1 @@
+TRUNCATE TABLE iter-data-storage-pv-uat.acsele_data.TD_POLIZA_CONTRATANTE_GE_raw

@@ -1,0 +1,2 @@
+INSERT INTO iter-data-storage-pv-uat.acsele_data.MIR_REP_VALORES_GARANTIZADOS_VIDA_202310_RAW
+SELECT * FROM iter-data-storage-pv-uat.acsele_temp.MIR_REP_VALORES_GARANTIZADOS_VIDA_202310_RAW

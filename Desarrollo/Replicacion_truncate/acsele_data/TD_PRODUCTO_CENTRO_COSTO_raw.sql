@@ -1,0 +1,1 @@
+TRUNCATE TABLE iter-data-storage-pv-uat.acsele_data.TD_PRODUCTO_CENTRO_COSTO_raw

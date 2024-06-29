@@ -1,0 +1,1 @@
+TRUNCATE TABLE iter-data-storage-pv-uat.samp_data.ABO_CAR_DEV_COL_raw

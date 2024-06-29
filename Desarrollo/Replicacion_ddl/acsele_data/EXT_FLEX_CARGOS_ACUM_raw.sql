@@ -1,0 +1,9 @@
+CREATE OR REPLACE EXTERNAL TABLE `iter-data-storage-pv-uat.acsele_temp.EXT_FLEX_CARGOS_ACUM_raw`
+(
+  NUM_POLIZA STRING,
+  FECHA_INI TIMESTAMP,
+  FECHA_FIN TIMESTAMP,
+  ID_TOTAL_PRIMAMIN STRING,
+  ID_TOTAL_PRIMAVOL STRING,
+  ID_TOTAL_INTERES STRING
+)OPTIONS (format="PARQUET",URIS=["gs://interseguro-datalake-alloy-uat-new/acsele_data/EXT_FLEX_CARGOS_ACUM_raw/*.parquet"]);

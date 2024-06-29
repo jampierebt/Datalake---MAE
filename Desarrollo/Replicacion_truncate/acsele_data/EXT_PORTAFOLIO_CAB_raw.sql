@@ -1,0 +1,1 @@
+TRUNCATE TABLE iter-data-storage-pv-uat.acsele_data.EXT_PORTAFOLIO_CAB_raw

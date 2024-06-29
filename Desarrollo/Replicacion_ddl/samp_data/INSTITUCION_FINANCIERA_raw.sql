@@ -1,0 +1,9 @@
+CREATE OR REPLACE EXTERNAL TABLE `iter-data-storage-pv-uat.samp_temp.INSTITUCION_FINANCIERA_raw`
+(
+  ID NUMERIC,
+  NOMBRE STRING,
+  CODIGO STRING,
+  ID_TIPO_INST_FINANC NUMERIC,
+  ABREVIATURA STRING,
+  FECHA_PROCESO TIMESTAMP
+)OPTIONS (format="PARQUET",URIS=["gs://interseguro-datalake-alloy-uat-new/samp_data/INSTITUCION_FINANCIERA_raw/*.parquet"]);

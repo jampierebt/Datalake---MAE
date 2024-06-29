@@ -1,0 +1,25 @@
+CREATE OR REPLACE EXTERNAL TABLE `iter-data-storage-pv-uat.acsele_temp.TD_POLIZA_SINIESTRO_RESERVA_landing`
+(
+  numero_poliza STRING,
+  numero_operacion NUMERIC,
+  auditdate_system_date STRING,
+  id_producto NUMERIC,
+  nombre_producto STRING,
+  numero_siniestro STRING,
+  fecha_siniestro STRING,
+  fecha_creacion_siniestro STRING,
+  id_siniestro NUMERIC,
+  id_estado_reserva_siniestro NUMERIC,
+  estado_reserva_siniestro STRING,
+  cobertura STRING,
+  fecha_reclamo_reserva_normal STRING,
+  tipo_documento STRING,
+  moneda_pago STRING,
+  fecha_transaccion_reserva STRING,
+  monto_reserva FLOAT64,
+  tipo_transaccion_reserva STRING,
+  motivo_reserva STRING,
+  cobertura_reserva STRING,
+  id_reserva NUMERIC,
+  id_ajuste_reserva NUMERIC
+)OPTIONS (format="PARQUET",URIS=["gs://interseguro-datalake-alloy-uat-new/acsele_data/TD_POLIZA_SINIESTRO_RESERVA_landing/*.parquet"]);

@@ -1,0 +1,1 @@
+TRUNCATE TABLE iter-data-storage-pv-uat.acsele_data.EXT_FLEX_PRIMA_MONTO_raw

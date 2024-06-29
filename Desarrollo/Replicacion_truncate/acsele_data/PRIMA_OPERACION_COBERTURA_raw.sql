@@ -1,0 +1,1 @@
+TRUNCATE TABLE iter-data-storage-pv-uat.acsele_data.PRIMA_OPERACION_COBERTURA_raw

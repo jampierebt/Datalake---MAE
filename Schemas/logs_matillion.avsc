@@ -1,0 +1,29 @@
+{
+  "namespace": "logs_matillion.avro",
+  "type": "record",
+  "name": "logs_matillion",
+  "fields": [
+    {"name": "id", "type": "long"},
+    {"name": "type", "type": "string"},
+    {"name": "customerID", "type": "long"},
+    {"name": "groupName", "type": "string"},
+    {"name": "projectID", "type": "long"},
+    {"name": "projectName", "type": "string"},
+    {"name": "versionID", "type": "long"},
+    {"name": "versionName", "type": "string"},
+    {"name": "jobID", "type": "long"},
+    {"name": "jobName", "type": "string"},
+    {"name": "environmentID", "type": "long"},
+    {"name": "environmentName", "type": "string"},
+    {"name": "state", "type": "string"},
+    {"name": "enqueuedTime", "type": "long"},
+    {"name": "startTime", "type": "long"},
+    {"name": "endTime", "type": "long"},
+    {"name": "message", "type": "string"},
+    {"name": "originatorID", "type": "string"},
+    {"name": "rowCount", "type": "long"},
+    {"name": "tasks", "type": "string"},
+    {"name": "hasHistoricJobs", "type": "boolean"},
+    {"name": "jobNames", "type": "string"}
+  ]
+}

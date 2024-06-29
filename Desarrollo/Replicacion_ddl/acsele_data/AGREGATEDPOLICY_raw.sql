@@ -1,0 +1,8 @@
+CREATE OR REPLACE EXTERNAL TABLE `iter-data-storage-pv-uat.acsele_temp.AGREGATEDPOLICY_raw`
+(
+  PRODUCTID NUMERIC,
+  AGREGATEDPOLICYID NUMERIC,
+  OPERATIONPK NUMERIC,
+  ESTADO_CARGA NUMERIC,
+  FECHA_PROCESO TIMESTAMP
+)OPTIONS (format="PARQUET",URIS=["gs://interseguro-datalake-alloy-uat-new/acsele_data/AGREGATEDPOLICY_raw/*.parquet"]);

@@ -1,0 +1,10 @@
+CREATE OR REPLACE EXTERNAL TABLE `iter-data-storage-pv-uat.acsele_temp.EVENTDCO_raw`
+(
+  AUDITDATE TIMESTAMP,
+  EVENTTYPEID NUMERIC,
+  OPERATIONPK NUMERIC,
+  POLICYPK NUMERIC,
+  IDDCOEVENT NUMERIC,
+  TRF_ID NUMERIC,
+  FECHA_PROCESO TIMESTAMP
+)OPTIONS (format="PARQUET",URIS=["gs://interseguro-datalake-alloy-uat-new/acsele_data/EVENTDCO_raw/*.parquet"]);

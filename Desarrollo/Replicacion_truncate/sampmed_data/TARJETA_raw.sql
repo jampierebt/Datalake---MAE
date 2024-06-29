@@ -1,0 +1,1 @@
+TRUNCATE TABLE iter-data-storage-pv-uat.sampmed_data.TARJETA_raw

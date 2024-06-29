@@ -1,0 +1,11 @@
+CREATE OR REPLACE EXTERNAL TABLE `iter-data-storage-pv-uat.acsele_temp.OAPROTECCFINANCOH_landing`
+(
+  AUDITDATE TIMESTAMP,
+  PK NUMERIC,
+  STATIC NUMERIC,
+  STATUS NUMERIC,
+  EDADINPUT STRING,
+  EDADVALUE STRING,
+  CORREOIINPUT STRING,
+  CORREOIVALUE STRING
+)OPTIONS (format="PARQUET",URIS=["gs://interseguro-datalake-alloy-uat-new/acsele_data/OAPROTECCFINANCOH_landing/*.parquet"]);

@@ -1,0 +1,7 @@
+CREATE OR REPLACE EXTERNAL TABLE `iter-data-storage-pv-uat.samp_temp.ORIGEN_RECAUDACION_PLANILLA_raw`
+(
+  ID_ORIGEN_RECA_PLANILLA NUMERIC,
+  CODIGO STRING,
+  DESCRIPCION STRING,
+  FECHA_PROCESO DATETIME
+)OPTIONS (format="PARQUET",URIS=["gs://interseguro-datalake-alloy-uat-new/samp_data/ORIGEN_RECAUDACION_PLANILLA_raw/*.parquet"]);

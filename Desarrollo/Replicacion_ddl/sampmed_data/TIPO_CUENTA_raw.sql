@@ -1,0 +1,11 @@
+CREATE OR REPLACE EXTERNAL TABLE `iter-data-storage-pv-uat.sampmed_temp.TIPO_CUENTA_raw`
+(
+  ID NUMERIC,
+  TIPO_VIA_COBRO NUMERIC,
+  VIA_COBRO NUMERIC,
+  TARJ_TIPO_CUENTA NUMERIC,
+  MON_POLIZA STRING,
+  COD_TIPO_CUENTA STRING,
+  GLS_TIPO_CUENTA STRING,
+  FECHA_PROCESO TIMESTAMP
+)OPTIONS (format="PARQUET",URIS=["gs://interseguro-datalake-alloy-uat-new/sampmed_data/TIPO_CUENTA_raw/*.parquet"]);

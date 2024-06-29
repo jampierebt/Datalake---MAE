@@ -1,0 +1,13 @@
+CREATE OR REPLACE EXTERNAL TABLE `iter-data-storage-pv-uat.acsele_temp.Siniestro_ti_landing`
+(
+  NUMERO_SINIESTRO STRING,
+  NUMERO_SINIESTRO_SEARCH STRING,
+  NUMERO_POLIZA STRING,
+  NOMBRE_BENEFICARIO STRING,
+  COBERTURA STRING,
+  PARTICIPACION STRING,
+  ESTADO_PAGO STRING,
+  FECHA_PAGO TIMESTAMP,
+  MONEDA STRING,
+  MONTO STRING
+)OPTIONS (format="PARQUET",URIS=["gs://interseguro-datalake-alloy-uat-new/acsele_data/Siniestro_ti_landing/*.parquet"]);
