@@ -58,6 +58,9 @@ python Framework/ejecucion_query_validacion.py
 # Backup para regresar a uat version antigua
 python Framework/ejecucion_export_backups.py
 
+# Realiza el listado de tablas ingestadas TD_*
+python Framework/ejecucion_tablas_ingestadas.py
+
 ```
 
 ## Zipeado-ODS
