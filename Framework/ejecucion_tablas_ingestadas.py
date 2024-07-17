@@ -14,8 +14,10 @@ for list in list_sql:
     tablas = re.findall(pattern, data)
     for name_tabla in tablas:
         results.append({
-            "NOMBRE_TABLA":list,
-            "TABLAS":name_tabla[0] +'.' +name_tabla[1]
+            "TABLA_BQ":list,
+            "SCHEMA":name_tabla[0].upper(),
+            "NAME_TABLE":name_tabla[1].upper(),
+            "TABLA":name_tabla[0].upper() +'.' +name_tabla[1].upper()
         })        
 df = pd.DataFrame(results).drop_duplicates()
 df.to_excel('process_tablas_ingestadas.xlsx',index=False)
