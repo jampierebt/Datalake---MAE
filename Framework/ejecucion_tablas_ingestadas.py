@@ -18,7 +18,7 @@ for list in list_sql:
             "SCHEMA":name_tabla[0].upper(),
             "NAME_TABLE":name_tabla[1].upper(),
             "TABLA":name_tabla[0].upper() +'.' +name_tabla[1].upper(),
-            "QUERY":"SELECT COUNT(*),' "+ name_tabla[1].upper() + "' AS TABLA FROM "+name_tabla[0].upper() +'.' +name_tabla[1].upper() + ' UNION ALL'
+            "QUERY":"SELECT COUNT(*),'"+ name_tabla[1].upper() + "' AS TABLA FROM "+name_tabla[0].upper() +'.' +name_tabla[1].upper() + ' UNION ALL'
         })        
 df = pd.DataFrame(results).drop_duplicates()
 df.to_excel('POLIZA_VIDA_ENDOSO.xlsx',index=False)
