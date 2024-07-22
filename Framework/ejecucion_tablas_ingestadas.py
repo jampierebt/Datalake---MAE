@@ -3,7 +3,7 @@ import os
 import re
 
 results = []
-path='sql/querys_ingesta/'
+path='sql/querys_mir/'
 pattern = r'(INTERSEGURO|interseguro|interseguro_gu|INTERSEGUROR|interseguror|INTERSEGURO_GU)\.(\w+)'
 
 list_sql = os.listdir(path)
@@ -17,7 +17,8 @@ for list in list_sql:
             "TABLA_BQ":list,
             "SCHEMA":name_tabla[0].upper(),
             "NAME_TABLE":name_tabla[1].upper(),
-            "TABLA":name_tabla[0].upper() +'.' +name_tabla[1].upper()
+            "TABLA":name_tabla[0].upper() +'.' +name_tabla[1].upper(),
+            "QUERY":"SELECT COUNT(*),' "+ name_tabla[1].upper() + "' AS TABLA FROM "+name_tabla[0].upper() +'.' +name_tabla[1].upper() + ' UNION ALL'
         })        
 df = pd.DataFrame(results).drop_duplicates()
-df.to_excel('process_tablas_ingestadas.xlsx',index=False)
+df.to_excel('POLIZA_VIDA_ENDOSO.xlsx',index=False)
