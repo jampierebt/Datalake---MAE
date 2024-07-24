@@ -16,7 +16,7 @@ for list in list_sql:
         results.append({
             "TABLA_BQ":list,
             "SCHEMA":name_tabla[0].upper(),
-            "NAME_TABLE":name_tabla[1].upper(),
+            "TABLE_NAME":name_tabla[1].upper(),
             "TABLA":name_tabla[0].upper() +'.' +name_tabla[1].upper(),
             "QUERY":"SELECT COUNT(*),'"+ name_tabla[1].upper() + "' AS TABLA FROM "+name_tabla[0].upper() +'.' +name_tabla[1].upper() + ' UNION ALL'
         })        
