@@ -257,7 +257,8 @@
                Pol.PrimaTotal,Prod.Producto,NVL(PL.Display,Pol.Plan) as Plan, Pe.Tipo, 
                fnGetNombreEndoso(Pol.Idproducto,NVL(Pe.Endososimple,Pe.Endosocomplejo)) as Endoso, 
                Pol.Idpoliza, Pol.Idoperacion, 
-               DENSE_RANK() OVER (PARTITION BY Pol.Idpoliza,Pol.NumeroSolicitud ORDER BY Pol.FechaProceso Desc, Pol.Fechaevento Desc, Pol.Idoperacion Desc) Orden
+               DENSE_RANK() OVER (PARTITION BY Pol.Idpoliza,Pol.NumeroSolicitud ORDER BY Pol.FechaProceso Desc
+               , Pol.Fechaevento Desc, Pol.Idoperacion Desc) Orden
         From Mir_Stagepoliza Pol
         Inner Join Vw_Mir_Producto Prod ON Prod.IDProducto = Pol.IDProducto AND Prod.TipoProducto='VIDA'
         Inner Join Mir_StageEvento Ev on Pol.Idevento = Ev.Idevento and Ev.EventoEndoso = 'SI'
